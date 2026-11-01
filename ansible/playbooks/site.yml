@@ -1,0 +1,5 @@
+---
+- name: HomeOps scaffold
+  hosts: homeops
+  gather_facts: false
+  tasks: []

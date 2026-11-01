@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+ansible/inventory.ini
+*.key
+*.pem
+*.tfstate*
+.terraform/
+*.tfvars
+**/node_modules/
+**/__pycache__/
+data/
+backups/
+reports/
+*.log

@@ -1,0 +1,6 @@
+# No targets configured yet.
+global:
+  scrape_interval: 15s
+rule_files:
+  - alerts.yml
+scrape_configs: []
