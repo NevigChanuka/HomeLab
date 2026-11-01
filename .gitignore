@@ -13,3 +13,4 @@ data/
 backups/
 reports/
 *.log
+.venv/

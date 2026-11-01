@@ -1,0 +1,26 @@
+name: PR title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  title:
+    name: PR title
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Validate Conventional Commit title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          python3 - <<'PYTHON'
+          import os
+          import re
+          title = os.environ["PR_TITLE"]
+          pattern = r"(?i)(?:feat|fix|docs|refactor|test|ci|chore|build|perf|revert)(?:\([a-z0-9-]+\))?(?:!?: .+|/[a-z0-9][a-z0-9 -]*)"
+          if len(title) > 72 or not re.fullmatch(pattern, title):
+              raise SystemExit("Use `type: summary` or `type/summary` under 72 characters.")
+          PYTHON
