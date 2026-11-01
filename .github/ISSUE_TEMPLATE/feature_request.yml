@@ -1,0 +1,17 @@
+name: Feature request
+description: Propose one infrastructure capability.
+title: "feat: "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Problem and proposed outcome
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and operational impact
+      description: Include dependencies, security, persistence and rollback where relevant.
+    validations:
+      required: true

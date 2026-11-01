@@ -1,0 +1,18 @@
+name: Bug report
+description: Report a reproducible problem using sanitized information.
+title: "bug: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Do not include secrets or private host information.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction and environment
+      description: Include steps, relevant versions and sanitized logs.
+    validations:
+      required: true
